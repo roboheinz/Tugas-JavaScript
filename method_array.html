@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metode-Metode Array</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        
+        body {
+            background-color: rgb(40, 40, 40);
+            color: azure;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //1. FILTER
+        //Filter di JavaScript adalah sebuah method yang digunakan untuk memfilter elemen-elemen pada sebuah array. Filter ini akan membuat array baru yang hanya terdiri dari elemen-elemen yang memenuhi suatu kondisi tertentu.
+
+        //SYNTAX
+        //array.filter(callback(element[, index[, array]])[, thisArg])
+
+        //array: Array yang akan difilter.
+        //callback: Fungsi yang akan dijalankan untuk setiap elemen pada array. Fungsi ini dapat memiliki tiga parameter yaitu 
+        //element (nilai elemen saat ini), 
+        //index (indeks elemen saat ini), dan 
+        //array (array asli yang sedang difilter). (Parameter index dan array bersifat opsional.)
+        //thisArg: Objek yang akan menjadi konteks (this) pada saat menjalankan fungsi callback. (Parameter ini bersifat opsional).
+
+        //CONTOH
+        let numbers = [1, 2, 3, 4, 5, 6];
+        let evenNumbers = numbers.filter (numbers => numbers % 2 === 0);
+        document.writeln (evenNumbers, "<br>"); //Output: [2, 4, 6]
+
+        //2. FOR EACH
+        //forEach adalah sebuah method dalam JavaScript yang memungkinkan Anda untuk mengiterasi sebuah array dan menjalankan sebuah fungsi untuk setiap elemen dalam array tersebut.
+
+        //SYNTAX
+        // array.forEach (function(currentValue, index, array) {
+        //  //Kode yang akan dijalankan untuk setiap elemen 
+        // });
+
+        //Dalam sintaks tersebut, array adalah array yang ingin Anda iterasi, dan fungsi di dalam forEach adalah kode yang akan dijalankan untuk setiap elemen dalam array. Fungsi tersebut memiliki tiga parameter:
+        //currentValue: elemen saat ini yang sedang diproses dalam array
+        //index: indeks dari elemen saat ini yang sedang diproses
+        //array: array yang forEach-nya dipanggil
+
+        //CONTOH
+        let angka = [1, 2, 3, 4, 5];
+        angka.forEach (angka => {
+        document.writeln (angka, "<br>");
+        }); //Output: 1 2 3 4 5
+
+        //3. JOINT
+        //join adalah method pada JavaScript yang digunakan untuk menggabungkan seluruh elemen dalam sebuah array menjadi sebuah string dengan memisahkan elemen-elemen tersebut menggunakan separator yang ditentukan.
+
+        //SYNTAX
+        //array.join(separator)
+
+        //array: Array yang akan digabungkan.
+        //separator: String yang akan digunakan sebagai pemisah antara elemen-elemen dalam array. Jika parameter ini tidak diberikan, maka separator default adalah koma (,).
+
+        //CONTOH
+        let fruits = ["apel", "mangga", "pisang", "anggur"];
+        let joinedFruits = fruits.join(", ");
+
+        document.writeln (joinedFruits, "<br>"); //Output: "apel, mangga, pisang, anggur"
+
+        //4. FOR IN
+        //for in adalah sebuah perulangan pada JavaScript yang digunakan untuk mengulang setiap properti pada sebuah objek.
+
+        //SYNTAX
+        // for (variable in object) {
+        //     //code yang akan dijalankan
+        // }
+
+        //variable: Variabel yang akan menyimpan nama properti saat ini pada setiap iterasi.
+        //object: Objek yang akan diiterasi propertinya.
+
+        //CONTOH
+        let person = {
+            name: "John Doe",
+            age: 30,
+            address: "Jl. Merdeka No. 10",
+            job: "Developer"
+        };
+
+        for (let prop in person) {
+            document.writeln (prop + ": " + person[prop], "<br>");
+        }
+
+        //5. FOR OF
+        //For of pada JavaScript adalah sebuah sintaks yang digunakan untuk melakukan iterasi atau perulangan pada sebuah objek iterable seperti Array, String, Map, atau Set. Sintaks ini memungkinkan pengguna untuk melakukan perulangan pada setiap elemen pada objek iterable tanpa harus menggunakan indeks atau method seperti forEach.
+
+        //SYNTAX
+        // for (variabel of iterable) {
+        //     // kode yang akan dijalankan pada setiap iterasi
+        // }
+
+        //variabel adalah variabel yang akan menyimpan nilai dari setiap iterasi, dan 
+        //iterable adalah objek yang dapat diulang seperti array atau string.
+
+        //CONTOH
+        let buah = ['apel', 'jeruk', 'pisang']; //(ARRAY)
+
+        for (let item of buah) {
+            document.writeln (item, "<br>");
+        } //Output: 'apel', 'jeruk', 'pisang'
+
+        let kata = 'JavaScript';
+        for (let huruf of kata) {
+            document.writeln (huruf, "<br>");
+        }//Output: 'J', 'a', 'v', 'a', 'S', 'c', 'r', 'i', 'p', 't'
+
+        //6. SPLICE
+        //Splice adalah sebuah metode bawaan pada JavaScript yang digunakan untuk mengubah isi dari sebuah array dengan menghapus atau menambahkan elemen ke dalamnya. Splice dapat mengubah array asli (modifikasi in-place) dan mengembalikan elemen yang dihapus dalam bentuk array.
+
+        //SYNTAX
+        //array.splice(indexAwal, jumlahHapus, tambahkanElemen1, tambahkanElemen2, ..., tambahkanElemenN);
+
+        //IndexAwal: Indeks elemen pada array yang akan dihapus atau diubah. Jika nilai negatif, maka akan dihitung dari akhir array.
+        //JumlahHapus: Jumlah elemen yang akan dihapus mulai dari indexAwal. Jika nilai 0, maka tidak ada elemen yang dihapus.
+        //TambahkanElemen1, tambahkanElemen2, ..., tambahkanElemenN: Elemen yang akan ditambahkan ke array, dimulai dari indexAwal. Jika nilai 0, maka tidak ada elemen yang ditambahkan.
+
+        //CONTOH
+
+        let fruit = ['apel', 'mangga', 'pisang', 'kiwi'];
+        fruit.splice(2, 1); // Menghapus elemen 'pisang' pada indeks 2
+        document.writeln (fruit, "<br>"); // Output: ['apel', 'mangga', 'kiwi']
+
+        let fruit1 = ['apel', 'mangga', 'kiwi'];
+        fruit1.splice(2, 0, 'pisang', 'anggur'); // Menambahkan elemen 'pisang' dan 'anggur' pada indeks 2
+        document.writeln (fruit1, "<br>"); // Output: ['apel', 'mangga', 'pisang', 'anggur', 'kiwi']
+
+        let fruit2 = ['apel', 'mangga', 'pisang', 'kiwi'];
+        fruit2.splice(1, 2, 'jeruk', 'nanas'); // Mengganti elemen 'mangga' dan 'pisang' pada indeks 1 dengan 'jeruk' dan 'nanas'
+        document.writeln (fruit2, "<br>"); // Output: ['apel', 'jeruk', 'nanas', 'kiwi']
+
+        //7. SPLIT
+        //Split adalah sebuah method dalam JavaScript yang digunakan untuk memecah sebuah string menjadi array.
+        
+        //SYNTAX
+        // string.split(separator, maxsplit)
+
+        // separator (opsional): merupakan string yang digunakan sebagai pemisah atau delimiter untuk memecah string menjadi potongan-potongan. Jika parameter ini tidak diisi, maka method split() akan memecah string menggunakan whitespace (spasi, tab, newline) sebagai pemisah.
+        // maxsplit (opsional): merupakan jumlah maksimum pemisahan yang akan dilakukan pada string. Jika parameter ini tidak diisi, maka method split() akan memecah string hingga habis. Jika parameter ini diisi, maka pemecahan string hanya akan dilakukan sebanyak maxsplit kali.
+        // Catatan: Kedua parameter di atas bersifat opsional. Jika tidak diberikan nilai, maka method split() akan menggunakan nilai default.
+        
+        //CONTOH:
+
+        let str = "Ini adalah sebuah kalimat.";
+        let arr = str.split (" "); // memisahkan string berdasarkan spasi
+        document.writeln (arr, "<br>"); // hasil: ["Ini", "adalah", "sebuah", "kalimat."]
+
+
+        let str1 = "Apel|Pisang|Jeruk|Mangga";
+        let arr1 = str1.split ("|", 2); // memisahkan string berdasarkan karakter pipa | dan membatasi jumlah pemisahan menjadi 2
+        document.writeln (arr1, "<br>"); // hasil: ["Apel", "Pisang"]
+
+        let str2 = "Apel, Pisang, Jeruk";
+        let arr2 = str2.split (","); // membagi string berdasarkan karakter koma
+        document.writeln (arr2, "<br>"); // hasil: ["Apel", "Pisang", "Jeruk"]
+
+        let str3 = "12-03-2022";
+        let arr3 = str3.split (/-/); // memisahkan dengan karakter -
+        document.writeln (arr3, "<br>"); // hasil: ["12", "03", "2022"]
+
+        //8. REVERSE
+        // Reverse  merupakan sebuah method pada JavaScript yang digunakan untuk membalikkan urutan elemen dalam sebuah array. Dalam prosesnya, urutan elemen pada array akan dibalik dari akhir ke awal sehingga elemen terakhir akan menjadi elemen pertama dan sebaliknya.
+
+        //SYNTAX
+
+
+        //CONTOH
+
+        let angka1 = [1, 2, 3, 4, 5];
+        document.writeln (angka1, "<br>"); // Output: [1, 2, 3, 4, 5]
+
+        angka1.reverse();
+        document.writeln (angka1, "<br>"); // Output: [5, 4, 3, 2, 1]
+
+        let namaBuah = ['apel', 'jeruk', 'mangga'];
+        document.writeln (namaBuah, "<br>"); // Output: ['apel', 'jeruk', 'mangga']
+
+        namaBuah.reverse();
+        document.writeln (namaBuah); // Output: ['mangga', 'jeruk', 'apel']
+    </script>
+</body>
+</html>
