@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Yang Dibuat Oleh Javascript</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        
+        body {
+            background-color: rgb(40, 40, 40);
+            color: azure;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //SPLIT
+        //Split adalah sebuah fungsi dalam JavaScript yang digunakan untuk memecah sebuah string menjadi array.
+        
+        //CONTOH:
+
+        let fruit = ['apel', 'mangga', 'pisang', 'kiwi'];
+        fruit.splice(2, 1); // Menghapus elemen 'pisang' pada indeks 2
+        document.writeln (fruit, "<br>"); // Output: ['apel', 'mangga', 'kiwi']
+
+        let fruit1 = ['apel', 'mangga', 'kiwi'];
+        fruit1.splice(2, 0, 'pisang', 'anggur'); // Menambahkan elemen 'pisang' dan 'anggur' pada indeks 2
+        document.writeln (fruit1, "<br>"); // Output: ['apel', 'mangga', 'pisang', 'anggur', 'kiwi']
+
+        let fruit2 = ['apel', 'mangga', 'pisang', 'kiwi'];
+        fruit2.splice(1, 2, 'jeruk', 'nanas'); // Mengganti elemen 'mangga' dan 'pisang' pada indeks 1 dengan 'jeruk' dan 'nanas'
+        document.writeln (fruit2, "<br>"); // Output: ['apel', 'jeruk', 'nanas', 'kiwi']
+
+        //7. SPLIT
+        //Split adalah sebuah method dalam JavaScript yang digunakan untuk memecah sebuah string menjadi array.
+        
+        //CONTOH:
+
+        let str = "Ini adalah sebuah kalimat.";
+        let arr = str.split (" "); // memisahkan string berdasarkan spasi
+        document.writeln (arr, "<br>"); // hasil: ["Ini", "adalah", "sebuah", "kalimat."]
+
+
+        let str1 = "Apel|Pisang|Jeruk|Mangga";
+        let arr1 = str1.split ("|", 2); // memisahkan string berdasarkan karakter pipa | dan membatasi jumlah pemisahan menjadi 2
+        document.writeln (arr1, "<br>"); // hasil: ["Apel", "Pisang"]
+
+        let str2 = "Apel, Pisang, Jeruk";
+        let arr2 = str2.split (","); // membagi string berdasarkan karakter koma
+        document.writeln (arr2, "<br>"); // hasil: ["Apel", "Pisang", "Jeruk"]
+
+        let str3 = "12-03-2022";
+        let arr3 = str3.split (/-/); // memisahkan dengan karakter -
+        document.writeln (arr3, "<br>"); // hasil: ["12", "03", "2022"]
+
+        //CHAR AT
+        //CharAt adalah sebuah method dalam JavaScript yang digunakan untuk mengambil karakter tertentu pada indeks yang ditentukan dari sebuah string. Metode ini mengembalikan karakter pada posisi yang ditentukan dalam string.
+
+        //CONTOH
+        let kata = "JavaScript";
+        let karakter = kata.charAt(4);
+        document.writeln (karakter, "<br>"); // Output: "S"
+
+        //MATCH
+        //Match adalah sebuah metode dalam bahasa pemrograman JavaScript yang digunakan untuk mencocokkan sebuah string dengan sebuah pola atau regular expression (regex) tertentu. Metode ini mengembalikan array hasil pencocokan yang terdiri dari semua string yang cocok dengan pola yang diberikan.
+
+        //CONTOH
+        let kalimat = "Saya suka makan nasi goreng";
+        let pola = /makan/;
+        let hasil = kalimat.match (pola);
+        document.writeln (hasil, "<br>"); // Output: ["makan"]
+
+        //SEARCH
+        // Search adalah sebuah metode dalam bahasa pemrograman JavaScript yang digunakan untuk mencari sebuah pola atau regular expression (regex) tertentu dalam sebuah string. Metode ini mengembalikan indeks pertama dari substring yang cocok dengan pola yang diberikan.
+
+        //CONTOH
+        let kalimat1 = "Saya suka makan nasi goreng";
+        let pola1 = /makan/;
+        let hasil1 = kalimat.search(pola);
+        document.writeln (hasil1, "<br>"); // Output: 10
+
+        //TOSTRING
+        // Tostring adalah sebuah method atau fungsi yang digunakan untuk mengubah tipe data menjadi string.
+
+        //CONTOH
+        let arrayBuah = ["apel", "mangga", "pisang"];
+        let stringBuah = arrayBuah.toString();
+
+        document.writeln (stringBuah); // Output: "apel,mangga,pisang"
+        document.writeln ("(", typeof stringBuah, ")", "<br>"); // Output: "string"
+
+        //GET DATE, GET MONTH, GET FULL YEAR
+        // Adalah method yang ada pada JavaScript yang digunakan untuk memperoleh tanggal
+
+        //CONTOH
+        let sekarang = new Date ();
+
+        let tanggal = sekarang.getDate ();
+        let bulan = sekarang.getMonth () + 1; // perlu ditambah 1 karena bulan dimulai dari 0 (Januari)
+        let tahun = sekarang.getFullYear ();
+
+        document.writeln ("Tanggal hari ini adalah ", tanggal, "/", bulan, "/", tahun, "<br>");
+
+        //SET TIME
+        //Set time adalah method yang ada pada JavaScript yang digunkan untu memperoleh waktu
+
+        //CONTOH
+        let d = new Date ();
+        d.setTime (1332403882588);
+        document.writeln (d);
+    </script>
+</body>
+</html>
