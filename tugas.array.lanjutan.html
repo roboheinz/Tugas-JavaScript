@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Array Lanjutan</title>
+    <style>
+        * {
+            margin:  5px;
+            padding: 0;
+            font-family: sans-serif;
+
+        }
+        
+        body {
+            color: azure;
+                background-color: rgb(40, 40, 40);
+            }
+    </style>
+</head>
+<body>
+    <script>
+        //SOAL NO.1
+        let array2 = [5,2,4,1,3,5];
+        array2.sort ();
+        document.writeln (`SOAL NO.1 <br> [${array2}] <br> <br> SOAL NO.2 <br>`);
+
+        //SOAL NO.2
+        let array3 = ["Selamat", "Anda", "Melakukan", "Perulangan", "Array", "Dengan", "For"];
+        for (let kata of array3) {
+            document.writeln (`${kata} <br>`);
+        }
+
+        //SOAL NO.3
+        document.writeln (`<br> SOAL NO.3`);
+
+        let array4 = [1, 2, 3, 4, 5, 6,7, 8, 9, 10];
+        for (let angka of array4) {
+            if (angka %2==0) {
+                document.writeln (`<br> ${angka}`);
+            }
+        }
+
+        //SOAL NO.4
+        document.writeln (`<br> <br> SOAL NO.4`);
+
+        let kalimat = ["Saya", "sangat", "senang", "belajar", "JavaScript"];
+        let joinKalimat = kalimat.join (" ");
+        document.writeln (`<br> "${joinKalimat}" <br> <br> SOAL NO.5 <br>`);
+
+        //SOAL NO.5
+        let sayuran = [];
+        sayuran.push ("Kangkung", "Bayam", "Buncis", "Kubis", "Timun", "Seledri", "Tauge");
+        let joinSayuran = sayuran.join ("<br>");
+        document.writeln (`${joinSayuran}`);
+    </script>
+</body>
+</html>
